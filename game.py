@@ -1,6 +1,6 @@
 # Tic Tac Toe
 
-board_slots = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+board_slots = list(range(10))
 winning_combinations = [(1,2,3), (4,5,6), (7,8,9), (1,4,7), (2,5,8), (3,6,9), (1,5,9), (3,5,7)]
 
 # Game state: [turn_count, current_player_symbol, is_game_over]
