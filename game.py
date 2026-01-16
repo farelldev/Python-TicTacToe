@@ -1,10 +1,18 @@
 # Tic Tac Toe
 
+import os
+
 board_slots = list(range(10))
 winning_combinations = [(1,2,3), (4,5,6), (7,8,9), (1,4,7), (2,5,8), (3,6,9), (1,5,9), (3,5,7)]
 
 # Game state: [turn_count, current_player_symbol, is_game_over]
 game_state = [0, 0, False] 
+
+def clear_screen():
+    if os.name == 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')
 
 def start_game():
   print("Welcome to Tic Tac Toe!\n")
@@ -36,6 +44,7 @@ def play_turn(player_num, player_symbol):
       valid_input = True
       game_state[0] += 1
       print()
+      clear_screen()
       show_board()
       check_game_over()
 
